@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control CDS Projection View'
+@MappingRole: true
+define role ZAP_CDS_AC_PROJ_TRAVEL {
+    grant
+        select
+            on
+                ZAP_CDS_PROJ_TRAVEL
+                    where
+                        inheriting conditions from entity ZAP_CDS_TRAVEL;
+                        
+}

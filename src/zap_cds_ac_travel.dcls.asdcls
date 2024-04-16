@@ -1,0 +1,14 @@
+@EndUserText.label: 'Access Control CDS base view'
+@MappingRole: true
+define role ZAP_CDS_AC_TRAVEL {
+    grant 
+        select
+            on
+                ZAP_CDS_TRAVEL
+                    where
+                      ( TravelStatus ) = aspect pfcg_auth(ZAP_STAT, ZAP_STAT, ACTVT = '03')
+                       and
+                        CurrencyCode = 'EUR'
+                       
+                      or true;
+}
